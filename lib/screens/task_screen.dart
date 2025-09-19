@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/widgets/tasks_list.dart';
 
 class TaskScreen extends StatelessWidget {
   const TaskScreen({super.key});
@@ -8,6 +9,7 @@ class TaskScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
+        // TODO: create a call back for the FAB
         onPressed: null,
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add, color: Colors.white),
@@ -53,6 +55,7 @@ class TaskScreen extends StatelessWidget {
             ),
             Expanded(
               child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -60,38 +63,7 @@ class TaskScreen extends StatelessWidget {
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: ListView(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Buy milk'),
-                          Checkbox(value: false, onChanged: null),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Buy eggs'),
-                          Checkbox(value: false, onChanged: null),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Buy bread'),
-                          Checkbox(value: false, onChanged: null),
-                        ],
-                      ),
-                      ListTile(
-                        title: Text('New task'),
-                        trailing: Checkbox(value: false, onChanged: null),
-                      ),
-                    ],
-                  ),
-                ),
+                child: TasksList(),
               ),
             ),
           ],
