@@ -16,6 +16,7 @@ class _TaskScreenState extends State<TaskScreen> {
     Task(name: 'Buy egg'),
     Task(name: 'Buy coffee'),
     Task(name: 'Buy cups'),
+    Task(name: 'Buy bread'),
   ];
 
   @override

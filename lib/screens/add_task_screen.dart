@@ -17,15 +17,16 @@ class AddTaskScreen extends StatelessWidget {
             style: TextStyle(color: Colors.lightBlueAccent, fontSize: 30),
           ),
           TextField(
-            decoration: InputDecoration(
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.lightBlueAccent),
-              ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.lightBlueAccent),
-              ),
-            ),
+            // decoration: InputDecoration(
+            //   enabledBorder: UnderlineInputBorder(
+            //     borderSide: BorderSide(color: Colors.lightBlueAccent),
+            //   ),
+            //   focusedBorder: UnderlineInputBorder(
+            //     borderSide: BorderSide(color: Colors.lightBlueAccent),
+            //   ),
+            // ),
             autofocus: true,
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: 10),
           TextButton(
