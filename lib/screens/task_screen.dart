@@ -28,13 +28,20 @@ class _TaskScreenState extends State<TaskScreen> {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true,
-            // builder: (BuildContext contex) => AddTaskScreen(),  d
+            // builder: (BuildContext contex) => AddTaskScreen(),
             builder: (context) => SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom,
                 ),
-                child: AddTaskScreen(),
+                child: AddTaskScreen(
+                  addTaskCallback: (newTaskTitle) {
+                    setState(() {
+                      tasks.add(Task(name: newTaskTitle));
+                    });
+                    Navigator.pop(context);
+                  },
+                ),
               ),
             ),
           );
@@ -75,7 +82,7 @@ class _TaskScreenState extends State<TaskScreen> {
                     ),
                   ),
                   Text(
-                    '12 Tasks',
+                    '${tasks.length.toString()} Tasks',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],
